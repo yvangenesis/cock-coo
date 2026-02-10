@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Cock-coo | Layer Growth Calc</title>
+</head>
+<body>
+    <div class="phone-wrapper">
+        <!-- BRANDING -->
+        <header class="brand-header">
+            <h1>COCK-COO</h1> <!-- FIXED: Removed span to fix 'K' color -->
+            <p>Layer Growth Calculator</p>
+        </header>
+
+        <main class="login-card">
+            <h2>Feed Calculator</h2>
+            <p class="subtitle">Track nutrition from Day 1 to Week 20+</p>
+
+            <div class="input-group">
+                <label>Number of Birds</label>
+                <input type="number" id="birdCount" placeholder="Enter quantity" required>
+            </div>
+
+            <div class="input-group">
+                <label>Current Age (Weeks)</label>
+                <input type="number" id="birdAge" placeholder="1 to 20+ weeks" required>
+            </div>
+
+            <div class="input-group">
+                <label>Price per KG</label>
+                <input type="number" id="pricePerKg" placeholder="Enter price" step="0.01">
+            </div>
+
+            <button class="login-btn" onclick="calculateFeed()">Calculate Now</button>
+
+            <!-- RESULT DISPLAY -->
+            <div id="resultBox" class="result-area" style="display: none; border: 2px dashed #FF8C00; padding: 15px; border-radius: 10px; margin-top: 20px;">
+                <p id="feedTypeTitle" style="color:#FF8C00; font-weight:800; font-size:0.9rem; text-transform:uppercase; margin-bottom:5px;"></p>
+                
+                <p style="margin: 0; font-size: 0.9rem;">Estimated Daily Total:</p>
+                <h3 id="finalValue" style="margin: 5px 0; font-size: 1.8rem;">0.0 kg</h3>
+                
+                <div id="costArea" style="border-top: 1px solid #eee; padding-top: 10px; margin-top: 10px;">
+                    <p style="margin: 0; font-size: 0.9rem;">Estimated Daily Cost:</p>
+                    <h4 style="color:#FF8C00; margin: 5px 0;">₱ <span id="totalCost">0.00</span></h4>
+                </div>
+
+                <div id="stageInfo" style="background: #f9f9f9; padding: 10px; border-radius: 5px; margin-top: 10px; font-size: 0.85rem; text-align: left;">
+                    <strong>Requirement:</strong> <span id="proteinLevel"></span><br>
+                    <small id="mixingInstruction" style="color: #666;"></small>
+                </div>
+
+                <button class="reset-btn" onclick="resetForm()" style="margin-top: 15px; background: none; border: none; color: #999; text-decoration: underline; cursor: pointer;">Clear Results</button>
+            </div>
+
+            <!-- FARMER'S TIP SECTION -->
+            <section class="tip-area" style="margin-top: 20px;">
+                <div class="tip-card">
+                    <span class="tip-icon">💡</span>
+                    <div class="tip-text">
+                        <strong>Farmer's Tip:</strong>
+                        <p id="dailyTip">Enter your flock details above to see personalized growth tips!</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer-area">
+            <p>Supporting aspiring farmers from day one.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
